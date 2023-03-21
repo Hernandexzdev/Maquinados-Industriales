@@ -1,0 +1,42 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container"> 
+    <% if (material) { %>
+        <form action="/api/material/<%= material.idMaterial %> " method="POST">
+            <input id="idMaterial" name="idMaterial" value="<%= material.idMaterial %> " hidden>
+            <div class="container-fluid">
+                <div class="row text-center">
+                  <div class="col-4">
+                    <label for="fecha_Solicitud" class="form-label"><b>Fecha Solicitud</b></label>
+                    <input type="date" class="form-control" id="fecha_Solicitud" name="fecha_Solicitud" value="<%= material.fecha_Solicitud %>">
+                    </div>
+                    <div class="col-4">
+                      <label for="fecha_Promesa" class="form-label"><b>Fecha Promesa</b></label>
+                      <input type="date" class="form-control" id="fecha_Promesa" name="fecha_Promesa" value="<%= material.fecha_Promesa %>">
+                    </div>
+                    <div class="col-4">
+                      <label for="fecha_Entrega" class="form-label"><b>Fecha Entrega</b></label>
+                      <input type="date" class="form-control" id="fecha_Entrega" name="fecha_Entrega" value="<%= material.fecha_Entrega %>">
+                    </div>
+                </div>
+                  <div class="row text-center my-2">
+                    <div class="col-4">
+                      <label for="fecha_Prorroga" class="form-label"><b>Fecha Pr&oacute;rroga</b></label>
+                      <input type="date" class="form-control" id="fecha_Prorroga" name="fecha_Prorroga" value="<%= material.fecha_Prorroga %>">
+                    </div>
+                    
+                  </div>
+                  
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class='bx bx-save'></i> Guardar</button>
+            </div>
+          </form>
+    <% } %>
+</div>
+        

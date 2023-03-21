@@ -1,0 +1,40 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row my-6">
+<br>
+<br>
+<table id="desing" class="table table-hover table-bordered table-striped text-center mt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Proyecto</th>
+      <th scope="col">Propuesta</th>  
+      <th scope="col">Minuta</th>            
+      <th scope="col">Documento Extra</th>  
+      <th scope="col">Aprobaci&oacute;n</th>
+      <th scope="col">Estatus</th>
+      <th scope="col">Acciones</th>  
+    </tr>
+  </thead>
+  <% propuestas.forEach(results => { %>
+    <tr>
+      <td><%= results.idPropuesta %>  </td>
+      <td><%= results.nombre_ProyectoPR %> </td>
+      <td><%= results.propuesta %> </td>
+      <td><%= results.minuta %> </td>
+      <td><%= results.documento_Complemetario %> </td>
+      <td><%= results.evidencia_Aprobacion %> </td>
+      <td><%= results.propuesta_Estatus %> </td>
+      <td><a href="/api/desing/<%= results.idPropuesta %>" class="btn btn-warning mx-1" ><i class='bx bxs-edit bx-sm'></i></a>
+          <a href="/api/desing/descarga/<%= results.archivo_Comprimido %>" class="btn btn-success mx-1 "><i class='bx bx-download bx-sm'></i></a></td>
+    </tr>
+  <% }) %>
+</table>
+</div>
+</div>
+<%- include("templates/footer") %> 

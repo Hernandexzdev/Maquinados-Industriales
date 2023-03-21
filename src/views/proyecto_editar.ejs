@@ -1,0 +1,52 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_menu") %>
+<br>
+<br>
+<br>
+<br>
+       
+        <div class="container text-center">
+            <% if (proyecto) { %>
+        <form  action="/api/proyecto/<%= proyecto.idProyecto %>" method="POST">
+            <input type="text" name="idProyecto" value="<%= proyecto.idProyecto %>" hidden>
+            <div class="row">
+              <div class="col-4">
+                <label for="nombre" class="form-label"><b>Nombre</b></label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="<%= proyecto.nombre %>">
+              </div>
+              <div class="col-4">
+                <label for="vendedor" class="form-label"><b>Vendedor</b></label>
+                <input type="text" class="form-control" id="vendedor" name="vendedor" value="<%= proyecto.vendedor %>">
+              </div>
+              <div class="col-4">
+                <label for="cliente" class="form-label"><b>Cliente</b></label>
+                <input type="text" class="form-control" id="cliente" name="cliente" value="<%= proyecto.cliente %>">
+              </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-4">
+                  <label for="estatus_proyecto" class="form-label" ><b>Estatus Proyecto</b> </label>
+                  <select class="form-select" aria-label="Default select example" name="estatus_proyecto" >
+                    <option selected>Selecciona</option>
+                    <option <%= proyecto.estatus_proyecto == 'Proceso' ? "selected" : '' %>  value="Proceso">Proceso</option>
+                    <option <%= proyecto.estatus_proyecto == 'Terminado' ? "selected" : '' %> value="Terminado">Terminado</option>
+                    <option <%= proyecto.estatus_proyecto == 'Reclamo' ? "selected" : '' %> value="Reclamo">Reclamo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-12">
+                <label for="especificaciones" class="form-label"><b>Especificaciones</b></label>
+                <textarea  class="form-control" id="especificaciones" name="especificaciones" rows="3" ><%= proyecto.especificaciones %></textarea>
+                </div>
+              </div>
+              <br><br>
+              <button id="btn_proyecto" type="submit" class="btn btn-primary my-2"><i class='bx bx-save'></i> Guardar</button>
+            </form>
+            <% } %>
+            </div>
+            
+      
+
+
+<%- include("templates/footer") %> 

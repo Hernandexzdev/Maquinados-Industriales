@@ -1,0 +1,11 @@
+.card:hover{
+        width: 230px;
+        height: 350px;
+        border-radius: 8px;
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        margin: 10px;
+        text-align: center;
+        transition: all 0.25s;
+}

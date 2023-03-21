@@ -1,0 +1,35 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<!-- Modal -->
+
+<div class="container">
+<table id="maquinado" class="table table-hover table-bordered table-striped text-center mt-4">
+  <thead>
+    <tr >
+      <th scope="col">ID</th>
+      <th scope="col">Nombre Proyecto</th>
+      <th scope="col">Fecha Solicitud</th>          
+      <th scope="col">Realizo</th>     
+      <th scope="col">Fecha Entrega</th>
+      <th scope="col">Fecha Pr&oacute;rroga</th>
+      <th scope="col">Acciones</th>  
+    </tr>
+  </thead>
+  <% maquinados.forEach(results => { %>
+    <tr>
+      <td><%= results.idMaquinado %> </td>
+      <td><%= results.nombre_ProyectoMA %></td>
+      <td><%= results.fecha_Solicitud %> </td>
+      <td><%= results.que_Realizo %></td>
+      <td><%= results.fecha_Entrega %></td>
+      <td><%= results.fecha_Prorroga %></td>
+      <td><a href="/api/maquinado/<%= results.idMaquinado %>" class="btn btn-warning mx-1"><i class='bx bxs-edit bx-sm'></i></a></td>
+    </tr>
+  <% }) %>
+</table>
+</div>
+<%- include("templates/footer") %> 

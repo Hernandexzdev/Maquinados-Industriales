@@ -1,0 +1,62 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<!-- Modal -->
+
+
+       <div class="container">
+        <% if (propuesta) { %>
+         
+        
+        <form action="/api/desing/<%= propuesta.idPropuesta %> " method="POST" enctype="multipart/form-data">
+            <input id="idPropuesta" name="idPropuesta" value="<%= propuesta.idPropuesta %> " hidden>
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="nombre_ProyectoPR" class="form-label"><b>Proyecto propuesta</b></label>
+                    <input type="text" class="form-control" id="nombre_ProyectoPR" name="nombre_ProyectoPR" value="<%= propuesta.nombre_ProyectoPR %>">
+                    </div>
+                  <div class="col-4">
+                    <label for="propuesta" class="form-label"><b>Propuesta</b></label>
+                    <input type="file" class="form-control" id="propuesta" name="propuesta" value="<%= propuesta.propuesta %> " multiple>
+                    </div>
+                    <div class="col-4 ">
+                      <label for="minuta" class="form-label"><b>Minuta</b></label>
+                      <input type="file" class="form-control" id="minuta" name="propuesta" value="<%= propuesta.minuta %> ">
+                    </div>
+                    
+                </div>
+                  <div class="row my-2">
+                    <div class="col-4">
+                      <label for="documentoE" class="form-label"><b>Documento extra</b></label>
+                      <input type="file" class="form-control" id="documentoE" name="propuesta" value="<%= propuesta.documento_Complementario %> " >
+                    </div>
+                    <div class="col-4">
+                      <label for="evidenciaA" class="form-label"><b>Evidencia aprobaci&oacute;n</b></label>
+                      <input type="file" class="form-control" id="evidenciaA" name="propuesta" value="<%= propuesta.evidencia_Aprobacion %> ">
+                    </div>
+                    <div class="col-4">
+                      <label for="propuesta_Estatus" class="form-label"><b>Estatus Propuesta</b></label>
+                      <select class="form-select" aria-label="Default select example" id="propuesta_Estatus" name="propuesta_Estatus" >
+                        <option selected>Selecciona</option>
+                        <option <%= propuesta.propuesta_Estatus == 'Aprobado' ? "selected" : "" %> value="Aprobado">Aprobado</option>
+                        <option <%= propuesta.propuesta_Estatus == 'Revisi&oacute;n' ? "selected" : "" %> value="Revisi&oacute;n">Revisi&oacute;n</option>
+                        <option <%= propuesta.propuesta_Estatus == 'Rechazado' ? "selected" : "" %>  value="Rechazado">Rechazado</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class='bx bx-save'></i> Guardar</button>
+            </div>
+          </form>
+          <% } %>
+       </div>
+     
+
+<%- include("templates/footer") %> 

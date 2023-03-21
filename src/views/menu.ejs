@@ -1,0 +1,65 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar", {usuario: "Pedro Hernandez de La Rosa"}) %>
+<div class="row mx-5 my-5 text-center">
+    <div class="col-3">
+        <a href="/recursos_humanos" class="text-decoration-none">
+            <div class="card" style="width: 18rem;">
+                <img loading="lazy" src="/icons/recursos_humanos.jpg" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h3>Recuros Humanos</h3>
+                </div>
+              </div>
+        </a>
+    </div>
+        <div class="col-3">
+            <a href="/mantenimineto" class="text-decoration-none">
+                <div class="card" style="width: 18rem;">
+                    <img loading="lazy" src="/icons/mantenimiento.png" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                      <h3>Mantenimiento</h3>
+                    </div>
+                  </div>
+            </a>
+        </div>
+            <div class="col-3">
+                <a href="/menu-proyecto" class="text-decoration-none">
+                    <div class="card" style="width: 18rem;">
+                        <img loading="lazy" src="/icons/proyecto.png" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                          <h3>Proceso</h3>
+                        </div>
+                      </div>
+                </a>
+            </div>
+                <div class="col-3">
+                    <a href="/atencion-cliente" class="text-decoration-none">
+                        <div class="card" style="width: 18rem;">
+                            <img loading="lazy" src="/icons/atencion_cliente.png" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                              <h3>Atenci&oacute;n al Cliente</h3>
+                            </div>
+                          </div>
+                    </a>
+                    <br>
+                </div>
+                    <div class="col-3">
+                        <a href="/" class="text-decoration-none">
+                            <div class="card" style="width: 18rem;">
+                                <img loading="lazy" src="/icons/proceso.png" class="card-img-top img-fluid" alt="...">
+                                <div class="card-body">
+                                  <h3>Almac&eacute;n</h3>
+                                </div>
+                              </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                      <a href="/api/empleado" class="text-decoration-none">
+                          <div class="card" style="width: 18rem;">
+                              <img loading="lazy" src="/icons/agregar_usuario.png" class="card-img-top img-fluid" alt="...">
+                              <div class="card-body">
+                                <h3>Agregar Usuario</h3>
+                              </div>
+                            </div>
+                      </a>
+                  </div>
+<%- include("templates/footer") %> 

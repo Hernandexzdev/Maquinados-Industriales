@@ -1,0 +1,41 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row my-6">
+
+<br>
+<br>
+<table id="entrega" class="table table-hover table-bordered table-striped text-center mt-4">
+  <thead>
+    <tr >
+      <th scope="col">ID</th>
+      <th scope="col">Nombre Proyecto</th>
+      <th scope="col">Factura</th>
+      <th scope="col">Fecha Promesa</th>            
+      <th scope="col">Fecha Entrega</th>  
+      <th scope="col">Estatus Pago</th>
+      <th scope="col">Acciones</th>  
+    </tr>
+  </thead>
+  <% entregas.forEach(results => { %>
+    <tr>
+      <td><%= results.idEntrega %> </td>
+      <td><%= results.nombre_ProyectoPA %> </td>
+      <td><%= results.factura %> </td>
+      <td><%= results.fecha_Promesa %> </td>
+      <td><%= results.fecha_Entrega %> </td>
+      <td><%= results.estatus_Pago %> </td>
+      <td>
+          <a href="/api/entrega/<%= results.idEntrega %>" class="btn btn-warning"><i class='bx bx-edit bx-sm'></i></a>
+          <a href="/api/descarga/factura/<%= results.factura %> " class="btn btn-success" download="<%= results.factura %>"><i class='bx bx-download bx-sm'></i></a>
+        </td>
+    </tr>
+  <% }) %>
+</table>
+</div>
+</div>
+<%- include("templates/footer") %> 

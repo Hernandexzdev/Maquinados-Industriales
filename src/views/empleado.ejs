@@ -1,0 +1,257 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_menu", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<!-- Modal -->
+<div class="modal fade modal-xl" id="ModalUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Persona</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container text-center">
+            <form  action="">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="nombre" class="form-label"><b>Nombre</b></label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                  </div>
+                  <div class="col-4">
+                    <label for="apellido_Paterno" class="form-label"><b>Apellido Paterno</b></label>
+                    <input type="text" class="form-control" id="apellido_Paterno" name="apellido_Paterno">
+                  </div>
+                  <div class="col-4">
+                    <label for="apellido_Materno" class="form-label"><b>Apellido Materno</b></label>
+                    <input type="text" class="form-control" id="apellido_Materno" name="apellido_Materno">
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-4">
+                      <label for="correo" class="form-label"><b>Correo</b></label>
+                      <input type="text" class="form-control" id="correo" name="correo">
+                    </div>
+                   <div class="col-4">
+                      <label for="telefono" class="form-label"><b>T&eacute;lefono</b></label>
+                      <input type="text" class="form-control" id="telefono" name="telefono">
+                   </div>
+                   <div class="col-4">
+                    <label for="nombre_usuario" class="form-label"><b>Nombre de Usuario</b></label>
+                    <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario">
+                      </div>
+                  </div>
+                  <div class="row my-2">
+                    
+                      <div class="col-4">
+                          <label for="contrasenia" class="form-label"><b>Contraseña</b></label>
+                          <input type="passsword" class="form-control" id="contrasenia" name="contrasenia">
+                      </div>
+                      <div class="col-4">
+                        <label for="rol" class="form-label" ><b>Rol</b> </label>
+                        <select id="name" name="rol" class="form-select" aria-label="Default select example">
+                          <option selected>Seleciona</option>
+                          <option value="Proceso">Empleado</option>
+                          <option value="Terminado">T&eacute;cnico</option>
+                          <option value="Reclamo">Recursos Humanos</option>
+                        </select>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-4 my-2">
+                            <label for="foto_Empleado" class="form-label"><b>Foto</b></label>
+                            <img id="imgEmpleado" src="" alt="">
+                        </div>
+                        <div class="col-4 my-2">
+                            <input type="file" class="form-control" id="foto_Empleado" name="foto_Empleado">
+                        </div>
+                      </div>
+                  </div>
+                </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class='bx bx-window-close'></i> Close</button>
+        <button type="button" class="btn btn-primary"><i class='bx bx-save'></i> Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal-xl" id="ModalUsuarioE" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Persona</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+              <form  action="">
+                  <div class="row">
+                    <div class="col-4">
+                      <label for="nombre" class="form-label"><b>Nombre</b></label>
+                      <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="col-4">
+                      <label for="apellido_Paterno" class="form-label"><b>Apellido Paterno</b></label>
+                      <input type="text" class="form-control" id="apellido_Paterno" name="apellido_Paterno">
+                    </div>
+                    <div class="col-4">
+                      <label for="apellido_Materno" class="form-label"><b>Apellido Materno</b></label>
+                      <input type="text" class="form-control" id="apellido_Materno" name="apellido_Materno">
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-4">
+                        <label for="correo" class="form-label"><b>Correo</b></label>
+                        <input type="text" class="form-control" id="correo" name="correo">
+                      </div>
+                     <div class="col-4">
+                        <label for="telefono" class="form-label"><b>T&eacute;lefono</b></label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                     </div>
+                     <div class="col-4">
+                      <label for="nombre_usuario" class="form-label"><b>Nombre de Usuario</b></label>
+                      <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                      
+                        <div class="col-4">
+                            <label for="contrasenia" class="form-label"><b>Contraseña</b></label>
+                            <input type="passsword" class="form-control" id="contrasenia" name="contrasenia">
+                        </div>
+                        <div class="col-4">
+                          <label for="rol" class="form-label" ><b>Rol</b> </label>
+                          <select id="name" name="rol" class="form-select" aria-label="Default select example">
+                            <option selected>Seleciona</option>
+                            <option value="Proceso">Empleado</option>
+                            <option value="Terminado">T&eacute;cnico</option>
+                            <option value="Reclamo">Recursos Humanos</option>
+                          </select>
+                        </div>
+                        <div class="row my-2">
+                          <div class="col-4 my-2">
+                              <label for="foto_Empleado" class="form-label"><b>Foto</b></label>
+                              <img id="imgEmpleado" src="" alt="">
+                          </div>
+                          <div class="col-4 my-2">
+                              <input type="file" class="form-control" id="foto_Empleado" name="foto_Empleado">
+                          </div>
+                        </div>
+                    </div>
+                  </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class='bx bx-window-close'></i> Close</button>
+          <button type="button" class="btn btn-primary"><i class='bx bx-save'></i> Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal fade modal-xl" id="ModalUsuarioM" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Persona</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+              <form  action="">
+                  <div class="row">
+                    <div class="col-4">
+                      <label for="nombre" class="form-label"><b>Nombre</b></label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" disabled>
+                    </div>
+                    <div class="col-4">
+                      <label for="apellido_Paterno" class="form-label"><b>Apellido Paterno</b></label>
+                      <input type="text" class="form-control" id="apellido_Paterno" name="apellido_Paterno" disabled>
+                    </div>
+                    <div class="col-4">
+                      <label for="apellido_Materno" class="form-label"><b>Apellido Materno</b></label>
+                      <input type="text" class="form-control" id="apellido_Materno" name="apellido_Materno" disabled>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-4">
+                        <label for="correo" class="form-label"><b>Correo</b></label>
+                        <input type="text" class="form-control" id="correo" name="correo" disabled>
+                      </div>
+                     <div class="col-4">
+                        <label for="telefono" class="form-label"><b>T&eacute;lefono</b></label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" disabled>
+                     </div>
+                     <div class="col-4">
+                      <label for="nombre_usuario" class="form-label"><b>Nombre de Usuario</b></label>
+                      <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" disabled>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                      
+                        <div class="col-4">
+                            <label for="contrasenia" class="form-label"><b>Contraseña</b></label>
+                            <input type="passsword" class="form-control" id="contrasenia" name="contrasenia" disabled>
+                        </div>
+                        <div class="col-4">
+                          <label for="rol" class="form-label" ><b>Rol</b> </label>
+                          <select id="name" name="rol" class="form-select" aria-label="Default select example" disabled>
+                            <option selected>Seleciona</option>
+                            <option value="Proceso">Empleado</option>
+                            <option value="Terminado">T&eacute;cnico</option>
+                            <option value="Reclamo">Recursos Humanos</option>
+                          </select>
+                        </div>
+                        <div class="row my-2">
+                          <div class="col-4 my-2">
+                              <label for="foto_Empleado" class="form-label"><b>Foto</b></label>
+                              <img id="imgEmpleado" src="" alt="">
+                          </div>
+                          <div class="col-4 my-2">
+                              <input type="file" class="form-control" id="foto_Empleado" name="foto_Empleado" disabled>
+                          </div>
+                        </div>
+                    </div>
+                  </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class='bx bx-window-close'></i> Close</button>
+          <button type="button" class="btn btn-primary"><i class='bx bx-save'></i> Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row mx-5 my-6">
+<div class="container">
+    <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#ModalUsuario"><i class='bx bx-plus-medical'></i> Usuario</button>
+</div>
+<br>
+<br>
+<table id="empleado" class="table table-bordered table-striped text-center mt-4">
+  <thead>
+    <tr >
+      <th scope="col">ID</th>
+      <th scope="col">Nomina</th>
+      <th scope="col">Nombre</th>            
+      <th scope="col">Usuario</th>  
+      <th scope="col">Rol</th>
+      <th scope="col">Acciones</th>  
+    </tr>
+  </thead>
+  <% empleados.forEach(results => { %>
+    <tr>
+      <td><%= results.idEmpleado %> </td>
+      <td><%= results.n_Nomina %> </td>
+      <td><%= results.nombre %> </td>
+      <td><%= results.nombreUsuario %> </td>
+      <td><%= results.rol %> </td>
+      <td><button class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#ModalUsuarioE"><i class='bx bxs-edit bx-sm'></i></button><button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalUsuarioM"><i class='bx bx-book-bookmark bx-sm'></i></button></td>
+    </tr>
+  <% }) %>
+</table>
+</div>
+<%- include("templates/footer") %> 

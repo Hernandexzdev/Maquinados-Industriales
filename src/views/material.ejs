@@ -1,0 +1,38 @@
+<%- include("templates/cabecera") %> 
+<%- include("templates/navbar_proyectos", {usuario: 'Pedro Hernandez de la Rosa'}) %>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row my-6">
+<br>
+<br>
+<table id="material" class="table table-hover table-bordered table-striped text-center mt-4">
+  <thead>
+    <tr >
+      <th scope="col">ID</th>
+      <th scope="col">Nombre del Proyecto</th>
+      <th scope="col">Fecha Solicitud</th>
+      <th scope="col">Fecha Promesa</th>            
+      <th scope="col">Fecha Entrega</th>  
+      <th scope="col">Fecha Pr&oacute;rroga</th>
+      <th scope="col">Acciones</th>  
+    </tr>
+  </thead>
+  <% materiales.forEach(results => { %>
+    <tr>
+      <td><%= results.idMaterial %> </td>
+      <td><%= results.nombre_ProyectoM %> </td>
+      <td><%= results.fecha_Solicitud %> </td>
+      <td><%= results.fecha_Promesa %> </td>
+      <td><%= results.fecha_Entrega %> </td>
+      <td><%= results.fecha_Prorroga %> </td>
+      <td><a href="/api/material/<%= results.idMaterial %>" class="btn btn-warning mx-1" ><i class='bx bxs-edit bx-sm'></i></a><button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalMaterialR"><i class='bx bx-book-bookmark bx-sm'></i></button></td>
+    </tr>
+  <% }) %>
+</table>
+</div>
+
+</div>
+<%- include("templates/footer") %>

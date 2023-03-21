@@ -1,0 +1,45 @@
+<%- include('templates/cabecera') %> 
+<%- include('templates/navbar_menu') %>
+<br><br><br><br><br>
+<% if (entrega) { %>
+ 
+
+<div class="container">
+            <form  action="/api/entrega/<%= entrega.idEntrega %>" method="post" enctype="multipart/form-data">
+                <input id="idEntrega" name="idEntrega" value="<%= entrega.idEntrega %> " hidden>
+                <div class="row">
+                  <div class="col-4">
+                    <label for="nombre_ProyectoPA" class="form-label"><b>Nombre Proyecto</b></label>
+                    <input type="text" class="form-control" id="nombre_ProyectoPA" name="nombre_ProyectoPA" value="<%= entrega.nombre_ProyectoPA %>" disabled>
+                  </div>
+                  <div class="col-4">
+                    <label for="fecha_Promesa" class="form-label"><b>Fecha Promesa</b></label>
+                    <input type="date" class="form-control" name="fecha_Promesa" value = "<%= entrega.fecha_Promesa %>">
+                  </div>
+                  <div class="col-4">
+                    <label for="fecha_Entrega" class="form-label"><b>Fecha Entrega</b></label>
+                    <input type="date" class="form-control" id="fecha_Entrega" name="fecha_Entrega" value= "<%= entrega.fecha_Entrega %>">
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-4">
+                      <label for="factura" class="form-label"><b>Factura</b></label>
+                      <input type="file" class="form-control" id="factura" name="factura" value="<%= entrega.factura %>">
+                    </div>
+                    <div class="col-4">
+                      <label for="estatus_Pago" class="form-label" ><b>Estatus Pago</b> </label>
+                      <select class="form-select" aria-label="Default select example" name="estatus_Pago" >
+                        <option <%= entrega.estatus_Pago == 'Pago' ? "selected" : "" %>  value="Pagado">Pagado</option>
+                        <option <%= entrega.estatus_Pago == 'No Pagado' ? "selected" : "" %> value="No Pagado">No Pagado</option>
+                        <option <%= entrega.estatus_Pago == 'Pediente' ? "selected" : "" %> value="Pendiente">Pendiente</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                 <div class="text-center">
+                  <button id="btn_guardarE" type="submit" class="btn btn-primary" data-bs-dimiss="modal"> <i class='bx bx-save'></i> Guardar</button>
+                 </div>
+                </form> 
+</div>
+<% } %>
+<%- include('templates/footer') %> 
