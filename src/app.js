@@ -35,13 +35,7 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(cookieParser(pass));
 
-app.use(session({
-    secret: pass,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 60000 }
-    
-}));
+
 
 
 //*: Rutas
